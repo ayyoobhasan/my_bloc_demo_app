@@ -23,9 +23,9 @@ class _UserDetailScreenState extends State<UserDetailScreen> {
   @override
   void initState() {
     super.initState();
-    nameController = TextEditingController(text: widget.user.name ?? "");
+    nameController = TextEditingController(text: widget.user.name ?? "name");
     addressController =
-        TextEditingController(text: widget.user.address?.street ?? "");
+        TextEditingController(text: widget.user.address?.street ?? "address");
   }
 
 
