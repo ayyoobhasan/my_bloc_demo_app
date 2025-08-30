@@ -73,8 +73,7 @@ class UserDetailBloc extends Bloc<UserDetailEvent, UserDetailState> {
       emit(
         current.copyWith(
           user: updatedUser,
-          isChanged: event.name != current.user.name ||
-              updatedUser.address?.street != current.user.address?.street,
+          isChanged: event.name != current.user.name || updatedUser.address?.street != current.user.address?.street,
         ),
       );
     }
@@ -89,8 +88,7 @@ class UserDetailBloc extends Bloc<UserDetailEvent, UserDetailState> {
       emit(
         current.copyWith(
           user: updatedUser,
-          isChanged: event.address != current.user.address?.street ||
-              updatedUser.name != current.user.name,
+          isChanged: event.address != current.user.address?.street || updatedUser.name != current.user.name,
         ),
       );
     }

@@ -23,9 +23,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     on<UpdateUserInList>((event, emit) {
       if (state is UserLoaded) {
         final currentState = state as UserLoaded;
-        final updatedUsers = currentState.users.map((u) {
-          return u.id == event.updatedUser.id ? event.updatedUser : u;
-        }).toList();
+        final updatedUsers = currentState.users.map((u) {return u.id == event.updatedUser.id ? event.updatedUser : u;}).toList();
 
         emit(UserLoaded(updatedUsers));
       }

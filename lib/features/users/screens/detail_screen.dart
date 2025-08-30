@@ -53,10 +53,8 @@ class _UserDetailScreenState extends State<UserDetailScreen> {
             }
             if (state is UserDetailLoaded) {
               // Keep controllers in sync with Bloc state
-              nameController.value =
-                  TextEditingValue(text: state.user.name ?? "");
-              addressController.value =
-                  TextEditingValue(text: state.user.address?.street ?? "");
+              nameController.value = TextEditingValue(text: state.user.name ?? "");
+              addressController.value = TextEditingValue(text: state.user.address?.street ?? "");
             }
           },
           builder: (context, state) {

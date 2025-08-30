@@ -3,9 +3,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:my_bloc_app/features/users/data/model/user_model.dart';
 
-import 'package:equatable/equatable.dart';
-
-
 abstract class UserDetailState extends Equatable {
   @override
   List<Object?> get props => [];
@@ -52,11 +49,3 @@ class UserDetailError extends UserDetailState {
 }
 
 
-
-/*class UserDetailLoaded extends UserDetailState {
-  final User user;
-  UserDetailLoaded(this.user);
-
-  @override
-  List<Object?> get props => [user];
-}*/
