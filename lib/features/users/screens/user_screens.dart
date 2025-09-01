@@ -15,7 +15,8 @@ class UserScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final userBloc = context.read<UserBloc>()..add(FetchUsers());
+    final userBloc = context.read<UserBloc>();
+    userBloc.add(FetchUsers());
 
     return Scaffold(
       appBar: AppBar(title: const Text("Users")),

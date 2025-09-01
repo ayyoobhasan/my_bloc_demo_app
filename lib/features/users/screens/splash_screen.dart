@@ -20,7 +20,8 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(const Duration(seconds: 2), () {
-      Navigator.pushReplacementNamed(context, userScreenRoute);
+      //Navigator.pushReplacementNamed(context, userScreenRoute);
+      Navigator.pushReplacementNamed(context, loginScreenRoute);
     });
   }
 
@@ -28,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text("🚀 Flutter BLoC Demo", style: TextStyle(fontSize: 24)),
+        child: Text("🚀 Flutter BLoC ", style: TextStyle(fontSize: 24)),
       ),
     );
   }
