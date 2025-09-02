@@ -3,10 +3,33 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import '../model/login_model.dart';
+import '../model/user_list.dart';
 import '../model/user_model.dart';
 
 
+
+
 class UserApiProvider {
+
+
+
+  Future<PaginatedResponse> fetchListUsers(int page) async {
+    final String baseUrl = "https://reqres.in/api/users";
+
+    final response = await http.get(Uri.parse("$baseUrl?page=$page"));
+    if (response.statusCode == 200) {
+      final data = json.decode(response.body);
+      List users = data['data'];
+      int totalPages = data['total_pages'];
+      return PaginatedResponse(
+        users: users.map((e) => UserList.fromJson(e)).toList(),
+        totalPages: totalPages,
+      );
+    } else {
+      throw Exception("Failed to load users");
+    }
+  }
+
 
   Future<List<User>> fetchUsers() async {
     final response = await http.get(
